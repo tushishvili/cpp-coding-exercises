@@ -3,48 +3,62 @@
 #include <stack>
 using namespace std;
 
-string command, word;
-stack <string> deleted_words;
-vector <string> result;
+// Stores the current list of posted messages
+vector<string> posted_messages;
 
-void delete_function(){
-    if(command=="DELETE"){
-        if(!result.empty()){
-            deleted_words.push(result.back());
-            result.pop_back();
+// Stack to keep track of deleted messages for possible restore
+stack<string> deleted_messages;
+
+// Process a DELETE command: remove last message and save it for restore
+void deleteLastMessage() {
+    if (!posted_messages.empty()) {
+        deleted_messages.push(posted_messages.back());
+        posted_messages.pop_back();
+    }
+}
+
+// Process a RESTORE command: restore the last deleted message if any
+void restoreLastDeleted() {
+    if (!deleted_messages.empty()) {
+        posted_messages.push_back(deleted_messages.top());
+        deleted_messages.pop();
+    }
+}
+
+// Process all commands
+void processCommands(int total_commands) {
+    for (int i = 0; i < total_commands; ++i) {
+        string command;
+        cin >> command;
+
+        if (command == "POST") {
+            string message;
+            cin >> message;
+            posted_messages.push_back(message);
         }
-    }
-}
-
-void restore_function(){
-    if(command=="RESTORE"){
-        if(!deleted_words.empty()){
-            result.push_back(deleted_words.top());
-            deleted_words.pop();
-        } 
-
-    }
-}
-
-void type_function(int command_number){
-    for(int i=0; i<command_number; i++){
-        cin>>command;
-        if(command=="POST") cin>>word, result.push_back(word);
-        else{
-            restore_function();
-            delete_function();
+        else if (command == "DELETE") {
+            deleteLastMessage();
         }
+        else if (command == "RESTORE") {
+            restoreLastDeleted();
+        }
+        // Could handle invalid commands here if needed
     }
 }
 
-void print_function(){
-    for(string s: result) cout<<s;
+// Print all current posted messages separated by spaces
+void printMessages() {
+    for (size_t i = 0; i < posted_messages.size(); ++i) {
+        cout << posted_messages[i];
+        if (i + 1 < posted_messages.size()) cout << " ";
+    }
+    cout << "\n";
 }
 
-int main(){
-    int command_number;
-    cin>>command_number;
-    type_function(command_number);
-    print_function();
-
+int main() {
+    int n;  // Number of commands
+    cin >> n;
+    processCommands(n);
+    printMessages();
+    return 0;
 }
