@@ -24,6 +24,9 @@ Tracks passport entries of visitors and counts unique visitors per country, also
 Implements the Josephus elimination game to find the last remaining contestant in a circular arrangement.  
 **File:** `josephus.cpp`
 
+### 6. Palindrome Substring Counter
+Given a string and a length n, counts how many substrings of length n are palindromes using a sliding window approach.
+**File:** `is_palindrome.cpp`
 ---
 
 ## How to run
