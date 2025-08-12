@@ -25,6 +25,7 @@ Implements the Josephus elimination game to find the last remaining contestant i
 **File:** `josephus.cpp`
 
 ### 6. Palindrome Substring Counter
+
 Given a string and a length n, counts how many substrings of length n are palindromes using a sliding window approach.
 **File:** `is_palindrome.cpp`
 ---
