@@ -1,34 +1,38 @@
 # C++ Problem-Solving Exercises
 
-This repository contains six C++ exercises demonstrating core data structures and algorithms through practical problem-solving.
+This repository contains seven C++ exercises demonstrating core data structures and algorithms through practical problem-solving.
 
 ## Exercises
 
-1. **ChatterBox Message Moderation**  
-   Simulates a messaging system where users can post, delete, and restore messages using commands.  
-   **File:** `chatterbox.cpp`
+1. ChatterBox Message Moderation  
+Simulates a messaging system where users can post, delete, and restore messages using commands.  
+**File:** chatterbox.cpp
 
-2. **Alex and the Number List**  
-   Given an array of integers and query indices, counts unique numbers in subarrays starting from given positions.  
-   **File:** `unique_elements.cpp`
+2. Alex and the Number List  
+Given an array of integers and query indices, counts unique numbers in subarrays starting from given positions.  
+**File:** unique_elements.cpp
 
-3. **Election Winner**  
-   Counts votes from voters, ignoring multiple votes from the same voter, and determines the winning candidate (ties resolved alphabetically).  
-   **File:** `election_winner.cpp`
+3. Election Winner  
+Counts votes from voters, ignoring multiple votes from the same voter, and determines the winning candidate (ties resolved alphabetically).  
+**File:** election_winner.cpp
 
-4. **Visitor Tracker**  
-   Tracks passport entries of visitors and counts unique visitors per country, also identifies passports with multiple entries.  
-   **File:** `visitor_tracker.cpp`
+4. Visitor Tracker  
+Tracks passport entries of visitors and counts unique visitors per country, also identifies passports with multiple entries.  
+**File:** visitor_tracker.cpp
 
-5. **Josephus Problem**  
-   Implements the Josephus elimination game to find the last remaining contestant in a circular arrangement.  
-   **File:** `josephus.cpp`
+5. Josephus Problem  
+Implements the Josephus elimination game to find the last remaining contestant in a circular arrangement.  
+**File:** josephus.cpp
 
-6. **Palindrome Substring Counter**  
-   Given a string and a length `n`, counts how many substrings of length `n` are palindromes using a sliding window approach.  
-   **File:** `is_palindrome.cpp`
+6. Palindrome Substring Counter  
+Given a string and a length n, counts how many substrings of length n are palindromes using a sliding window approach.  
+**File:** is_palindrome.cpp
 
-## How to Run
+7. Balanced Parentheses Checker  
+Checks whether a given string of parentheses, braces, and brackets is balanced. Uses a stack to track opening symbols and validates matching closing ones.  
+**File:** balanced_parentheses.cpp
+
+## How to run
 
 Compile each exercise using:
 
